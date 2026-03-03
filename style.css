@@ -69,18 +69,11 @@ h1, h2, h3 {
 }
 
 .today-block {
-    margin-bottom: 0.3em;
+    border-left: 8px solid #2155e4;
+    padding: 15px 20px;
+    margin: 25px 0;
+    background: #fff7f2;
 }
-
-.today-block h3{
-    
-    margin-top: 1em;
-    margin-bottom: 0.5em;
-    font-size: 1.2em;
-    text-align:center;
-    
-}
-
 
 .event-date {
     font-weight: bold;
