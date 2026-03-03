@@ -88,6 +88,10 @@ h1, h2, h3 {
     margin: 20px;
 }
 
+.upcoming-block h3 {
+    font-size: 10px;
+}
+
 .ongoing-block {
     border: 3px solid #12657e;
     border-radius: 10px;
