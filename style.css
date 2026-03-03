@@ -109,13 +109,11 @@ hr {
 
 .slideshow-clock {
     color: black;
-    font-size: 50px;
     margin-top: 10px;
     z-index: 10;
 }
 
 .slideshow-date {
-    font-size: 50px;
     margin-top: 10px;
     font-weight: bold;
 }
@@ -125,13 +123,17 @@ hr {
     border-radius: 10px;
     padding: 15px;
     margin: 20px;
+
+    font-size: 70px;
+    text-align:center;
 }
 
 .timer-bar {
-    width: 100%;
+    width: 0%;                          /* start collapsed for JS animation */
     height: 10px;
-    background: rgba(255,255,255,0.3);
-    margin-bottom: 10px;
+    background-color: #4aa3ff;          /* visible blue */
+    margin-top: 0px;
+    border-radius: 5px;                 /* optional, rounded edges */
 }
 
 .slideshow img.slide {
@@ -140,7 +142,7 @@ hr {
     height: 100%;
     object-fit: contain;
     opacity: 0;
-    transition: opacity 1.5s ease-in-out;
+    transition: opacity 0.5s ease-in-out;
     top: 0;
     left: 0;
 }
