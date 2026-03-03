@@ -74,6 +74,13 @@ h1, h2, h3 {
     margin: 20px;
 }
 
+.this-week-block {
+    border: 3px solid #12657e;
+    border-radius: 10px;
+    padding: 15px;
+    margin: 20px;
+}
+
 .upcoming-block {
     border: 3px solid #12657e;
     border-radius: 10px;
@@ -175,7 +182,7 @@ hr {
 .upcoming-scroll-inner {
     display: flex;
     flex-direction: column;
-    animation: scroll-up 20s linear infinite;
+    animation: scroll-up 60s linear infinite;
 }
 
 @keyframes scroll-up {
