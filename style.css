@@ -107,6 +107,7 @@ h1, h2, h3 {
 .event-block.today .event-date span.date {
     color: #d9534f;
     font-weight: bold;
+    text-decoration: underline dotted;
 }
 
 .event-name {
