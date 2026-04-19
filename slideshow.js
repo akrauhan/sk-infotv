@@ -1,5 +1,28 @@
 document.addEventListener("DOMContentLoaded", function () {
 
+
+    function cleanupEvents() {
+    const today = new Date();
+    today.setHours(0,0,0,0);
+
+    document.querySelectorAll(".event-block").forEach(el => {
+        const startStr = el.dataset.start;
+        const endStr = el.dataset.end || startStr;
+
+        if (!startStr) return;
+
+        const start = new Date(startStr + "T00:00:00");
+        const end = new Date(endStr + "T00:00:00");
+
+        // remove fully expired events
+        if (end < today) {
+            el.remove();
+        }
+    });
+    }
+
+    cleanupEvents();
+
     const slideshowColumn = document.querySelector(".right-panel");
     if (!slideshowColumn) return;
 
@@ -20,6 +43,9 @@ document.addEventListener("DOMContentLoaded", function () {
     }
     updateClock();
     setInterval(updateClock, 1000);
+
+
+
 
     const now = new Date();
     const dayname = now.getDay();
