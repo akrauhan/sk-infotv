@@ -215,3 +215,11 @@ hr {
     0% { transform: translateY(0); }
     100% { transform: translateY(-50%); }  /* duplicates events → half height */
 }
+
+.ongoing-block.small .event-name {
+    font-size: 0.75em;
+}
+
+.ongoing-block.small .event-date {
+    font-size: 0.75em;
+}
