@@ -48,15 +48,27 @@ document.addEventListener("DOMContentLoaded", function () {
     function getDuration(elem) {
         if (elem.tagName === "VIDEO") return null;
 
-        const img = elem.querySelector("img");
-        if (!img) return DEFAULT_DURATION;
+        // If this is an <img> directly
+        let src = elem.src;
 
-        let parsed = DEFAULT_DURATION;
-        const filename = img.src.split("/").pop();
-        const match = filename.match(/(?:^|\D)(\d+)s(?:\D|$)/i);
-        if (match) parsed = parseInt(match[1], 10) * 1000;
+        // Fallback if structure ever changes (safe guard)
+        if (!src) {
+            const img = elem.querySelector("img");
+            if (!img) return 8000;
+            src = img.src;
+        }
 
-        return parsed > MAX_DURATION ? MAX_DURATION : parsed;
+        const filename = src.split("/").pop();
+
+        // Match (20s), 20s, _20s, etc.
+        const match = filename.match(/(\d+)s/i);
+
+        if (match) {
+            const duration = parseInt(match[1], 10) * 1000;
+            return duration > MAX_DURATION ? MAX_DURATION : duration;
+        }
+
+        return 8000; // default 8 seconds
     }   
 
     let index = 0;
